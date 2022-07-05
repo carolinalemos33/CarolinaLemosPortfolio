@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;600&family=Quicksand&display=swap">
+		<link rel="stylesheet" href="css/Style.css">
+		<link rel="stylesheet" href="css/Slide.css">
+	</head>
+	<body>
+
+		<div class="navbar">
+			<a href="./Index.html"         >Início</a>
+			<a href="./Index.html#sobre"   >Sobre</a>
+			<a href="./Index.html#projetos">Projetos</a>		
+		</div>
+
+		<div class="section main">
+			<div class="container">
+
+				<div class="headerpanel">
+					<h1>Planisfério Astronómico</h1>
+					<h2>Protótipo | 2022</h2>
+				</div>
+
+				<div class="leftpanel split">
+
+					<div class="slideshow-container">
+	
+						<div class="mySlides fade">
+							<!--<div class="numbertext">1 / 3</div>-->
+							<img src="images/estela1.jpeg" style="width:100%">
+  							<!--<div class="text">Caption Text</div>-->
+						</div>
+
+						<div class="mySlides fade">
+							<!--<div class="numbertext">2 / 3</div>-->
+							<img src="images/estela2.jpeg" style="width:100%">
+							<!--<div class="text">Caption Two</div>-->
+						</div>
+
+						<div class="mySlides fade">
+							<!--<div class="numbertext">3 / 3</div>-->
+							<img src="images/estela3.jpeg" style="width:100%">
+							<!--<div class="text">Caption Three</div>-->
+						</div>
+
+						<!--
+						<a class="prev" onclick="plusSlides(-1)">❮</a>
+						<a class="next" onclick="plusSlides(1)">❯</a>
+						-->
+
+					</div>
+					<br>
+					<div style="text-align:center">
+						<span class="dot" onclick="currentSlide(1)"></span> 
+						<span class="dot" onclick="currentSlide(2)"></span> 
+						<span class="dot" onclick="currentSlide(3)"></span> 
+					</div>
+
+				</div>
+				
+				<div class="rightpanel split">
+
+					<p>Estela é um projeto promotor do turismo direcionado a todas as idades e culturas. Consiste num espaço educativo que propociona o convívio e transmissão de conhecimento. O intuito do projeto é promover momentos de convívio num espaço inaproveitado da aldeia de Janeiro de Cima. A aldeia apresenta condições magníficas no âmbito da observação das estrelas - dada a sua localização geográfica, iluminação e altitude. O planisfério tem representadas as constelações presentes no céu. Para o fazer funcionar é necessário rodar o disco interior móvel de modo que se alinhe o dia deste com a hora do disco imóvel exterior. Esta movimentação dos discos permite que a iluminação da placa de luz - que se encontra no interior do planisfério - incida apenas nas constelações vísiveis nesse momento no céu.</p>
+
+				</div>
+			
+			</div>
+		</div>
+
+		<script>
+			let slideIndex = 1;
+			showSlides(slideIndex);
+
+			function plusSlides(n) {
+			  showSlides(slideIndex += n);
+			}
+
+			function currentSlide(n) {
+			  showSlides(slideIndex = n);
+			}
+
+			function showSlides(n) {
+			  let i;
+			  let slides = document.getElementsByClassName("mySlides");
+			  let dots = document.getElementsByClassName("dot");
+			  if (n > slides.length) {slideIndex = 1}    
+			  if (n < 1) {slideIndex = slides.length}
+			  for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";  
+			  }
+			  for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			  }
+			  slides[slideIndex-1].style.display = "block";  
+			  dots[slideIndex-1].className += " active";
+			}
+		</script>
+
+	</body>
+</html>
